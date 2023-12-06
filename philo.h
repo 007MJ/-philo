@@ -6,16 +6,10 @@
 #include <stdlib.h>
 #include <sys/time.h>
 
-typedef struct s_philo
+typedef struct s_symposium
 {
-	int			id;
-	int			*fork;
-	int			nb_philo;
-	int 		must_eat;
-	int			time_to_eat;
-	int			time_to_die;
-	int			time_to_sleep;
-}	t_philo;
+	
+}	t_symposium;
 
 void		*routine();
 void		create(t_philo *philo);

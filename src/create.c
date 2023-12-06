@@ -13,7 +13,7 @@ int	*ft_range(int fork)
 	}
 	return (range);
 }
-void	create(t_philo **philo)
+void	create(t_philo *philo)
 {
 	int		i;
 	t_philo	*current_philo;
