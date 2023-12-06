@@ -8,7 +8,10 @@
 
 typedef struct s_symposium
 {
-	
+	int	time_to_die;
+	int	time_to_ea;
+	int	time_to_sleep;
+	int	must_eat;
 }	t_symposium;
 
 void		*routine();
