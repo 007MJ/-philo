@@ -1,38 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   main_parsing.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mnshimiy <mnshimiy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/06 12:54:17 by mnshimiy          #+#    #+#             */
-/*   Updated: 2023/12/06 12:54:18 by mnshimiy         ###   ########.fr       */
+/*   Created: 2023/12/06 13:07:46 by mnshimiy          #+#    #+#             */
+/*   Updated: 2023/12/06 13:14:34 by mnshimiy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../philo.h"
 
-long int ft_atoi(char *str)
+int	main_parsing(char *av[], int ac)
 {
-	int 		i;
-	long	int res;
-	int			sign;
+	int	i;
 
-	sign = 1;
-	i = 0;
-	res = 0;
-	while (str[i] == ' ' || (str[i] >= 9 && str[i] <= 13))
-		i++;
-	if (str[i] == '-' || str[i] == '+')
+	i = 1;
+	while (i < ac)
 	{
-		if (str[i] == '-')
-			sign = -1;
+		if (is_digit(av[i]) == -1)
+			return (-1);
 		i++;
 	}
-	while (str[i] >= '0' && str[i] <= '9')
-	{
-		res = res * 10 + str[i] - '0';
-		i++;
-	}
-	return (sign * res);
+	return (1);
 }

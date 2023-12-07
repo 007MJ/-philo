@@ -1,35 +1,18 @@
 #include "../philo.h"
 
-int	*ft_range(int fork)
+t_circle	*create(char *av[])
 {
-	int	i;
-	int	*range;
-	i = 1;
-	range = malloc(sizeof(int) * fork);
-	while (i < fork)
-	{
-		range[i] = i;
-		i++;
-	}
-	return (range);
-}
-void	create(t_philo *philo)
-{
-	int		i;
-	t_philo	*current_philo;
+	t_circle	*tab_rond;
 
-	i = 0;
-	current_philo = *philo;
-	philo->fork = ft_range(philo->nb_philo);
-	while (i < philo->nb_philo)
+	tab_rond = ft_calloc(1, sizeof(t_circle));
+	if (tab_rond)
 	{
-		pthread_create(&philo->socrate[i], NULL, &routine, NULL);
-		i++;
+		tab_rond->socrate = ft_atoi(av[1]);
+		tab_rond->time_to_die = ft_atoi(av[2]);
+		tab_rond->time_to_eat = ft_atoi(av[3]);
+		tab_rond->time_to_sleep = ft_atoi(av[4]);
+		tab_rond->time_to_sleep = ft_atoi(av[4]);
+		tab_rond->must_eat = ft_atoi(av[5]);
 	}
-	i = 0;
-	while (i < philo->nb_philo)
-	{
-		pthread_join(philo->socrate[i], NULL);
-		i++;
-	}
+	return (tab_rond);
 }

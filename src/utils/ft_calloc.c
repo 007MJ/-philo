@@ -1,38 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mnshimiy <mnshimiy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/06 12:54:17 by mnshimiy          #+#    #+#             */
-/*   Updated: 2023/12/06 12:54:18 by mnshimiy         ###   ########.fr       */
+/*   Created: 2023/12/07 12:41:59 by mnshimiy          #+#    #+#             */
+/*   Updated: 2023/12/07 13:10:17 by mnshimiy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../philo.h"
 
-long int ft_atoi(char *str)
+void	ft_bzero(void *ptr, size_t size)
 {
-	int 		i;
-	long	int res;
-	int			sign;
+	unsigned char *c;
+	size_t	i;
 
-	sign = 1;
 	i = 0;
-	res = 0;
-	while (str[i] == ' ' || (str[i] >= 9 && str[i] <= 13))
-		i++;
-	if (str[i] == '-' || str[i] == '+')
+	c = (unsigned char *)ptr;
+	while (i < size)
 	{
-		if (str[i] == '-')
-			sign = -1;
+		c[i] = 0;
 		i++;
 	}
-	while (str[i] >= '0' && str[i] <= '9')
+}
+void	*ft_calloc(size_t count, size_t size)
+{
+	char *ptr;
+	if (count == 0 || size == 0)
 	{
-		res = res * 10 + str[i] - '0';
-		i++;
+		count = 1;
+		size = 1;
 	}
-	return (sign * res);
+	ptr = malloc(count * size);
+	ft_bzero(ptr, size);
 }

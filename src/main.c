@@ -3,17 +3,14 @@
 
 int main(int ac, char *av[])
 {
+	t_circle *tab_rond;
 
-	if (ac > 1)
+	tab_rond = NULL;
+	if (ac == 5 || ac == 6)
 	{
-		t_philo	**philo;
-
-		philo = malloc(sizeof(t_philo));
-		(*philo)->nb_philo = (int)ft_atoi(av[1]);
-		// philo->time_to_die = ft_atoi(av[2]);
-		// philo->time_to_eat = ft_atoi(av[3]);
-		// philo->time_to_sleep = ft_atoi(av[4]);
-		// philo->must_eat = ft_atoi(av[5]);
-		create(philo);
+		if (main_parsing(av, ac) == -1)
+			return (-1);
+		tab_rond = create(av);
 	}
+	return (0);
 }
