@@ -6,7 +6,7 @@
 /*   By: mnshimiy <mnshimiy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/06 12:53:59 by mnshimiy          #+#    #+#             */
-/*   Updated: 2023/12/07 13:05:51 by mnshimiy         ###   ########.fr       */
+/*   Updated: 2023/12/07 16:01:49 by mnshimiy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int	is_digit(char *str)
 	int	i;
 
 	i = 0;
-	if (str)
+	if (str != NULL)
 	{
 		while(str[i] == ' ' || str[i] == '\t' || str[i] == '\n')
 			i++;

@@ -6,7 +6,7 @@
 /*   By: mnshimiy <mnshimiy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/07 12:41:59 by mnshimiy          #+#    #+#             */
-/*   Updated: 2023/12/07 13:10:17 by mnshimiy         ###   ########.fr       */
+/*   Updated: 2023/12/07 15:52:51 by mnshimiy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,4 +35,5 @@ void	*ft_calloc(size_t count, size_t size)
 	}
 	ptr = malloc(count * size);
 	ft_bzero(ptr, size);
+	return (ptr);
 }
