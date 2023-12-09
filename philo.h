@@ -27,11 +27,11 @@ typedef struct s_circle
 }	t_circle;
 
 
-void		*routine();
+void		*routine(void *tab_rond);
 t_circle	*create(char *av[]);
 int			is_digit(char *str);
 long	int	ft_atoi(char *str);
 void		*ft_calloc(size_t count, size_t size);
-void		thread(t_circle *tab_rond);
+void		c_thread(t_circle *tab_rond);
 int			main_parsing(char *av[], int ac);
 #endif

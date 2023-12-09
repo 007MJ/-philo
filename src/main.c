@@ -11,7 +11,7 @@ int main(int ac, char *av[])
 		if (main_parsing(av, ac) == -1)
 			return (-1);
 		tab_rond = create(av);
-		thread(tab_rond);
+		c_thread(tab_rond);
 	}
 	else
 		return (-1);
