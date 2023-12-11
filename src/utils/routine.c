@@ -4,14 +4,14 @@ void	test_function()
 {
 	printf("other function\n");
 }
-void	*routine(void *tab_rond)
+void	*routine(void *real_philo)
 {
-	t_circle	*same_tab;
+	t_philo	*fake_philo;
 
-	same_tab = (t_circle *)tab_rond;
-	pthread_mutex_lock(&same_tab->tab_socrates->mutex);
-		printf("--> %d\n", same_tab->tab_socrates->id);
-	pthread_mutex_unlock(&same_tab->tab_socrates->mutex);
-	printf("Test from tread\n");
+	fake_philo = (t_philo *)real_philo;
+	// if (fake_philo->id % 2 == 0)
+	// {
+		printf("id %d next fork %d\n", fake_philo->id, fake_philo->next_mutex_id);
+	// }
 	return (NULL);
 }
