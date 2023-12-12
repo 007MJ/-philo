@@ -15,8 +15,8 @@ typedef struct s_philo
 	int				eat;
 	int				dead;
 	pthread_t		socrate;
-	pthread_mutex_t	*mutex;
-	int				next_mutex_id;
+	pthread_mutex_t	mutex;
+	pthread_mutex_t	*next_mutex;
 	t_circle		*tab_to_eat;
 }	t_philo;
 
