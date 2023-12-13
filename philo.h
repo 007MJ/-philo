@@ -37,6 +37,7 @@ t_circle	*create(char *av[]);
 int			is_digit(char *str);
 long	int	ft_atoi(char *str);
 void		*ft_calloc(size_t count, size_t size);
+void		impair_thread(t_philo *philo);
 void		make_thread(t_circle *tab_rond);
 int			main_parsing(char *av[], int ac);
 #endif

@@ -6,7 +6,7 @@
 #    By: mnshimiy <mnshimiy@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/28 17:23:00 by mnshimiy          #+#    #+#              #
-#    Updated: 2023/12/11 17:33:01 by mnshimiy         ###   ########.fr        #
+#    Updated: 2023/12/13 13:31:33 by mnshimiy         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,7 @@ CFLAG = -Wall -Werror -Wextra -pthread -g -fsanitize=thread
 RM  = rm -fr
 
 SRCS  = src/main.c src/create.c \
-		src/utils/routine.c  src/utils/ft_calloc.c src/utils/make_thread.c \
+		src/utils/routine.c  src/utils/ft_calloc.c src/utils/make_thread.c  src/utils/impair_thread.c \
 		src/parsing/ft_atoi.c src/parsing/is_digit.c  src/parsing/main_parsing.c \
 
 OBJS = $(SRCS:.c=.o)
