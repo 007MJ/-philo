@@ -7,9 +7,10 @@ void	*routine(void *real_philo)
 
 	fake_philo = (t_philo *)real_philo;
 	running = 1;
-	while (running == 1)
+	while (running != 10)
 	{
 		impair_thread(fake_philo);
+		// pair_thread(fake_philo);
 		running++;
 	}
 	return (NULL);
