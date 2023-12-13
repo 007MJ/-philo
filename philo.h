@@ -14,6 +14,8 @@ typedef struct s_philo
 	int				id;
 	int				eat;
 	int				dead;
+	int				left;
+	int				rigth;
 	pthread_t		socrate;
 	pthread_mutex_t	mutex;
 	pthread_mutex_t	*next_mutex;
@@ -43,5 +45,6 @@ void		pair_thread(t_philo *philo);
 void		make_thread(t_circle *tab_rond);
 int			main_parsing(char *av[], int ac);
 void		eat_after_spleep(t_philo *philo);
+void		thinking(t_philo *philo);
 int			live_time();
 #endif
