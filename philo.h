@@ -24,16 +24,16 @@ typedef struct s_philo
 
 typedef struct s_circle
 {
-	int				nb_socrates;
-	int				time_prog;
-	int				time_to_die;
-	int				time_to_eat;
-	int				time_to_sleep;
-	int				running;
-	int				must_eat;
-	pthread_t		Spinoza;
-	pthread_mutex_t	mutex;
-	t_philo			*tab_socrates;
+	int						nb_socrates;
+	long long				time_prog;
+	int						time_to_die;
+	int						time_to_eat;
+	int						time_to_sleep;
+	int						running;
+	int						must_eat;
+	pthread_t				Spinoza;
+	pthread_mutex_t			mutex;
+	t_philo					*tab_socrates;
 }	t_circle;
 
 

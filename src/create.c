@@ -11,6 +11,7 @@ t_circle	*create(char *av[])
 		tab_rond->time_to_eat = ft_atoi(av[3]);
 		tab_rond->time_to_sleep = ft_atoi(av[4]);
 		tab_rond->time_prog = live_time();
+		printf("%lld\n", tab_rond->time_prog);
 		tab_rond->running = 1;
 		if (ft_atoi(av[5]))
 			tab_rond->must_eat = ft_atoi(av[5]);

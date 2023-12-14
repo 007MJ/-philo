@@ -18,7 +18,7 @@ void	*routine(void *real_philo)
 		ft_usleep(fake_philo->tab_to_eat->time_to_die);
 		pthread_mutex_unlock(&fake_philo->mutex);
 		pthread_mutex_unlock(fake_philo->next_mutex);
-		printf("%lld %d is sleeping\n", live_time(), fake_philo->id);
+		printf("%lld %d is sleeping\n", live_time() - time_prog, fake_philo->id);
 		ft_usleep(fake_philo->tab_to_eat->time_to_sleep);
 	}
 	return (NULL);
