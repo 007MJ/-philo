@@ -25,7 +25,7 @@ typedef struct s_philo
 typedef struct s_circle
 {
 	int				nb_socrates;
-	int				live_time;
+	int				time_prog;
 	int				time_to_die;
 	int				time_to_eat;
 	int				time_to_sleep;
@@ -49,5 +49,5 @@ int				main_parsing(char *av[], int ac);
 void			eat_after_spleep(t_philo *philo);
 void			thinking(t_philo *philo);
 long long		live_time();
-// void			*checker(void *philo);
+void			ft_usleep(int time);
 #endif
