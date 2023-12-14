@@ -12,7 +12,7 @@ typedef struct s_circle t_circle;
 typedef struct s_philo
 {
 	int				id;
-	int				eat;
+	long long		last_eat;
 	int				dead;
 	int				left;
 	int				rigth;
@@ -29,22 +29,25 @@ typedef struct s_circle
 	int				time_to_die;
 	int				time_to_eat;
 	int				time_to_sleep;
+	int				running;
 	int				must_eat;
+	pthread_t		Spinoza;
 	pthread_mutex_t	mutex;
 	t_philo			*tab_socrates;
 }	t_circle;
 
 
-void		*routine(void *tab_rond);
-t_circle	*create(char *av[]);
-int			is_digit(char *str);
-long	int	ft_atoi(char *str);
-void		*ft_calloc(size_t count, size_t size);
-void		impair_thread(t_philo *philo);
-void		pair_thread(t_philo *philo);
-void		make_thread(t_circle *tab_rond);
-int			main_parsing(char *av[], int ac);
-void		eat_after_spleep(t_philo *philo);
-void		thinking(t_philo *philo);
-int			live_time();
+void			*routine(void *tab_rond);
+t_circle		*create(char *av[]);
+int				is_digit(char *str);
+long	int		ft_atoi(char *str);
+void			*ft_calloc(size_t count, size_t size);
+void			impair_thread(t_philo *philo);
+void			pair_thread(t_philo *philo);
+void			make_thread(t_circle *tab_rond);
+int				main_parsing(char *av[], int ac);
+void			eat_after_spleep(t_philo *philo);
+void			thinking(t_philo *philo);
+long long		live_time();
+// void			*checker(void *philo);
 #endif
