@@ -1,6 +1,7 @@
 #include "../philo.h"
 
 
+
 int main(int ac, char *av[])
 {
 	t_circle *tab_rond;

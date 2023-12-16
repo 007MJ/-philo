@@ -14,7 +14,7 @@ typedef struct s_philo
 	int				id;
 	long long		last_eat;
 	int				dead;
-	int				left;
+	int				eat;
 	int				rigth;
 	pthread_t		socrate;
 	pthread_mutex_t	mutex;
@@ -26,13 +26,14 @@ typedef struct s_circle
 {
 	int						nb_socrates;
 	long long				time_prog;
-	int						time_to_die;
+	long long				time_to_die;
 	int						time_to_eat;
 	int						time_to_sleep;
 	int						running;
 	int						must_eat;
 	pthread_t				Spinoza;
 	pthread_mutex_t			mutex;
+	pthread_mutex_t			eat;
 	t_philo					*tab_socrates;
 }	t_circle;
 
@@ -48,6 +49,7 @@ void			make_thread(t_circle *tab_rond);
 int				main_parsing(char *av[], int ac);
 void			eat_after_spleep(t_philo *philo);
 void			thinking(t_philo *philo);
+void			checker(t_circle *tab_rond);
 long long		live_time();
 void			ft_usleep(int time);
 #endif
