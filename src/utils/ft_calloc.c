@@ -6,7 +6,7 @@
 /*   By: mnshimiy <mnshimiy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/07 12:41:59 by mnshimiy          #+#    #+#             */
-/*   Updated: 2023/12/10 15:46:42 by mnshimiy         ###   ########.fr       */
+/*   Updated: 2023/12/17 16:23:24 by mnshimiy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 void	ft_bzero(void *ptr, size_t size)
 {
-	unsigned char *c;
-	size_t	i;
+	unsigned char	*c;
+	size_t			i;
 
 	i = 0;
 	c = (unsigned char *)ptr;
@@ -25,9 +25,12 @@ void	ft_bzero(void *ptr, size_t size)
 		i++;
 	}
 }
+
 void	*ft_calloc(size_t count, size_t size)
 {
-	char *ptr;
+	char	*ptr;
+
+	ptr = NULL;
 	if (count == 0 || size == 0)
 	{
 		count = 1;

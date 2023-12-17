@@ -1,8 +1,22 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   create.c                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mnshimiy <mnshimiy@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/12/17 16:36:41 by mnshimiy          #+#    #+#             */
+/*   Updated: 2023/12/17 16:37:02 by mnshimiy         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../philo.h"
 
 t_circle	*create(char *av[])
 {
 	t_circle		*tab_rond;
+
+	tab_rond = NULL;
 	tab_rond = ft_calloc(1, sizeof(t_circle));
 	if (tab_rond)
 	{
