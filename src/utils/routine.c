@@ -6,7 +6,7 @@
 /*   By: mnshimiy <mnshimiy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/17 16:06:47 by mnshimiy          #+#    #+#             */
-/*   Updated: 2023/12/17 16:53:33 by mnshimiy         ###   ########.fr       */
+/*   Updated: 2023/12/17 18:56:55 by mnshimiy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,11 +25,11 @@ void	eat_sleep(t_philo *philo, long long time_prog)
 	{
 		pthread_mutex_unlock(&philo->tab_to_eat->eat);
 		pthread_mutex_lock(&philo->mutex);
+		pthread_mutex_lock(philo->next_mutex);
 		if (philo->tab_to_eat->running == 1)
 		{
 			printf("%lld %d has taken a fork\n", live_time()
 				- time_prog, philo->id);
-			pthread_mutex_lock(philo->next_mutex);
 			printf("%lld %d has taken a fork\n", live_time()
 				- time_prog, philo->id);
 			printf("%lld %d is eating\n", live_time() - time_prog, philo->id);

@@ -1,31 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   live_time.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mnshimiy <mnshimiy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/17 16:35:54 by mnshimiy          #+#    #+#             */
-/*   Updated: 2023/12/17 18:34:41 by mnshimiy         ###   ########.fr       */
+/*   Created: 2023/12/13 16:13:01 by mnshimiy          #+#    #+#             */
+/*   Updated: 2023/12/17 16:19:00 by mnshimiy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../philo.h"
+#include "../../philo.h"
 
-int	main(int ac, char *av[])
+long long	live_time(void)
 {
-	t_circle	*tab_rond;
+	struct timeval	start;
 
-	tab_rond = NULL;
-	if (ac == 5 || ac == 6)
-	{
-		if (main_parsing(av, ac) == -1)
-			return (-1);
-		tab_rond = create(av);
-		make_thread(tab_rond);
-		free_philo(tab_rond);
-	}
-	else
-		return (-1);
-	return (0);
+	if (gettimeofday(&start, NULL) == -1)
+		return (printf("Error time"), -1);
+	return ((start.tv_sec * 1000) + (start.tv_usec / 1000));
 }

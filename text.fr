@@ -1,0 +1,4 @@
+==84668== Conditional jump or move depends on uninitialised value(s)
+==84668==    at 0x100003A9C: checker (checker.c:25)
+==84668==    by 0x1000036E5: make_thread (make_thread.c:56)
+==84668==    by 0x100002FF8: main (main.c:14)
