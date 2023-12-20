@@ -1,25 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   pair_thread.c                                      :+:      :+:    :+:   */
+/*   must_eat.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mnshimiy <mnshimiy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/13 16:28:40 by mnshimiy          #+#    #+#             */
-/*   Updated: 2023/12/17 16:14:50 by mnshimiy         ###   ########.fr       */
+/*   Created: 2023/12/13 13:28:45 by mnshimiy          #+#    #+#             */
+/*   Updated: 2023/12/20 10:45:33 by mnshimiy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../philo.h"
 
-void	pair_thread(t_philo *philo)
+int	must_eat(t_philo *philo)
 {
-	if (philo->id % 2 == 0)
+	int	i;
+	int	j;
+
+	i = 0;
+	j = 0;
+	while (i < philo->tab_to_eat->nb_socrates)
 	{
-		pthread_mutex_lock(&philo->mutex);
-		printf("%lld %d has taken a fork\n", live_time(), philo->id);
-		pthread_mutex_lock(philo->next_mutex);
-		printf("%lld %d has taken a fork\n", live_time(), philo->id);
-		eat_after_spleep(philo);
+		if (philo->tab_to_eat->tab_socrates[i].eat == philo->tab_to_eat->must_eat)
+		{
+			j++;
+		}
+		i++;
 	}
+	if (j == philo->tab_to_eat->nb_socrates)
+	{
+		printf("All philo have eat\n");
+		philo_print(philo);
+		return (-1);
+	}
+	return (1);
 }
