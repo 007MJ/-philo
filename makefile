@@ -6,13 +6,13 @@
 #    By: mnshimiy <mnshimiy@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/28 17:23:00 by mnshimiy          #+#    #+#              #
-#    Updated: 2023/12/20 09:51:56 by mnshimiy         ###   ########.fr        #
+#    Updated: 2023/12/25 09:36:52 by mnshimiy         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = philo
 CC = gcc
-CFLAG = -Wall -Werror -Wextra -pthread -g -fsanitize=thread
+CFLAG = -Wall -Werror -Wextra -pthread -g 
 #-fsanitize=thread
 
 RM  = rm -fr

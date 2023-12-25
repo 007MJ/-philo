@@ -6,7 +6,7 @@
 /*   By: mnshimiy <mnshimiy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/10 16:14:16 by mnshimiy          #+#    #+#             */
-/*   Updated: 2023/12/17 18:36:28 by mnshimiy         ###   ########.fr       */
+/*   Updated: 2023/12/25 09:38:51 by mnshimiy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,6 @@
 
 void	free_philo(t_circle *tab_rond)
 {
-	int	i;
-
-	i = 0;
-	// while (i < tab_rond->nb_socrates)
-	// {
-	// 	free(&tab_rond->tab_socrates[i]);
-	// 	i++;
-	// }
+	free(tab_rond->tab_socrates);
 	free(tab_rond);
 }
