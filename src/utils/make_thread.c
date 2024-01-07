@@ -6,7 +6,7 @@
 /*   By: mnshimiy <mnshimiy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/07 16:15:27 by mnshimiy          #+#    #+#             */
-/*   Updated: 2023/12/20 08:47:51 by mnshimiy         ###   ########.fr       */
+/*   Updated: 2024/01/06 23:38:58 by mnshimiy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,20 +45,23 @@ void	make_thread(t_circle	*tab_rond)
 	t_philo	*philo;
 
 	i = 0;
-	philo = tab_rond->tab_socrates;
-	init_mutex(philo, tab_rond->nb_socrates);
-	init_philo(philo, tab_rond->nb_socrates);
-	while (i < tab_rond->nb_socrates && philo != NULL)
+	if (tab_rond->nb_socrates > 1)
 	{
-		philo[i].tab_to_eat = tab_rond;
-		pthread_create(&philo[i].socrate, NULL, routine, &philo[i]);
-		i++;
-	}
-	checker(tab_rond);
-	i = 0;
-	while (i < tab_rond->nb_socrates && philo != NULL)
-	{
-		pthread_join(philo[i].socrate, NULL);
-		i++;
+		philo = tab_rond->tab_socrates;
+		init_mutex(philo, tab_rond->nb_socrates);
+		init_philo(philo, tab_rond->nb_socrates);
+		while (i < tab_rond->nb_socrates && philo != NULL)
+		{
+			philo[i].tab_to_eat = tab_rond;
+			pthread_create(&philo[i].socrate, NULL, routine, &philo[i]);
+			i++;
+		}
+		checker(tab_rond);
+		i = 0;
+		while (i < tab_rond->nb_socrates && philo != NULL)
+		{
+			pthread_join(philo[i].socrate, NULL);
+			i++;
+		}
 	}
 }

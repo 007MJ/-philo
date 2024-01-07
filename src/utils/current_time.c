@@ -1,36 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   must_eat.c                                         :+:      :+:    :+:   */
+/*   current_time.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mnshimiy <mnshimiy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/13 13:28:45 by mnshimiy          #+#    #+#             */
-/*   Updated: 2024/01/06 16:52:52 by mnshimiy         ###   ########.fr       */
+/*   Created: 2024/01/06 01:54:48 by mnshimiy          #+#    #+#             */
+/*   Updated: 2024/01/06 14:03:13 by mnshimiy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../philo.h"
 
-int	must_eat(t_philo *philo)
+long long	current_time(t_circle *tab_rond)
 {
-	int	i;
-	int	j;
+	long long	time;
 
-	i = 0;
-	j = 0;
-	while (i < philo->tab_to_eat->nb_socrates)
-	{
-		if (philo->tab_to_eat->tab_socrates[i].eat
-			== philo->tab_to_eat->must_eat)
-			j++;
-		i++;
-	}
-	if (j == philo->tab_to_eat->nb_socrates - 1)
-	{
-		printf("All philo have eat\n");
-		// philo_print(philo);
-		return (-1);
-	}
-	return (1);
+	time = live_time() - tab_rond->time_prog;
+	return (time);
 }

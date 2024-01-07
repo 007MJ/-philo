@@ -6,11 +6,12 @@
 /*   By: mnshimiy <mnshimiy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/17 18:34:54 by mnshimiy          #+#    #+#             */
-/*   Updated: 2023/12/25 09:18:43 by mnshimiy         ###   ########.fr       */
+/*   Updated: 2024/01/06 16:49:41 by mnshimiy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../philo.h"
+
 int	check_input(t_circle *tab_rond)
 {
 	if (tab_rond->time_to_die < 60)
@@ -19,9 +20,26 @@ int	check_input(t_circle *tab_rond)
 		return (-1);
 	if (tab_rond->time_to_sleep < 60)
 		return (-1);
+	if (tab_rond->nb_socrates > 200)
+		return (-1);
 	return (1);
 }
-t_circle	*create(char *av[])
+
+int	expan_creater(t_circle *tab_rond, char *av[], int ac)
+{
+	if (ft_atoi(av[5]) && ac == 6)
+	{
+		if (ft_atoi(av[5]) <= 0)
+			return (-1);
+		else
+			tab_rond->must_eat = ft_atoi(av[5]);
+		return (1);
+	}
+	tab_rond->must_eat = -1;
+	return (1);
+}
+
+t_circle	*create(char *av[], int ac)
 {
 	t_circle	*tab_rond;
 
@@ -38,10 +56,8 @@ t_circle	*create(char *av[])
 		pthread_mutex_init(&tab_rond->mutex, NULL);
 		pthread_mutex_init(&tab_rond->eat, NULL);
 		tab_rond->running = 1;
-		if (ft_atoi(av[5]))
-			tab_rond->must_eat = ft_atoi(av[5]);
-		else
-			tab_rond->must_eat = -1;
+		if (expan_creater(tab_rond, av, ac) == -1)
+			return (NULL);
 		if (check_input(tab_rond) == -1)
 			return (NULL);
 	}
