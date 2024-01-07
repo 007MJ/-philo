@@ -1,23 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_usleep.c                                        :+:      :+:    :+:   */
+/*   is_dead.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mnshimiy <mnshimiy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/14 13:48:05 by mnshimiy          #+#    #+#             */
-/*   Updated: 2024/01/07 15:16:48 by mnshimiy         ###   ########.fr       */
+/*   Created: 2024/01/07 13:28:17 by mnshimiy          #+#    #+#             */
+/*   Updated: 2024/01/07 15:32:26 by mnshimiy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../philo.h"
 
-void	ft_usleep(long time)
+int	is_dead(t_circle *tab_rond)
 {
-	long long	start;
-
-	start = live_time();
-	usleep(1000);
-	while (live_time() < time + start)
-		usleep(150);
+	pthread_mutex_lock(&tab_rond->eat);
+	if (tab_rond->running == -1)
+		return (pthread_mutex_unlock(&tab_rond->eat), -1);
+	pthread_mutex_unlock(&tab_rond->eat);
+	return (1);
 }

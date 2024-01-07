@@ -6,7 +6,7 @@
 /*   By: mnshimiy <mnshimiy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/17 16:06:47 by mnshimiy          #+#    #+#             */
-/*   Updated: 2024/01/07 00:45:21 by mnshimiy         ###   ########.fr       */
+/*   Updated: 2024/01/07 15:30:44 by mnshimiy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 
 void	if_printf(t_philo *philo, char *str)
 {
+	(void)str;
 	pthread_mutex_lock(&philo->tab_to_eat->eat);
 	if (philo->tab_to_eat->running == 1)
 	{

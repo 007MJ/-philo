@@ -6,7 +6,7 @@
 /*   By: mnshimiy <mnshimiy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/15 16:04:11 by mnshimiy          #+#    #+#             */
-/*   Updated: 2024/01/06 16:27:57 by mnshimiy         ###   ########.fr       */
+/*   Updated: 2024/01/07 15:31:07 by mnshimiy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ void	checker(t_circle *tab_rond)
 				pthread_mutex_unlock(&tab_rond->eat);
 				break ;
 			}
-				pthread_mutex_unlock(&tab_rond->eat);
+			pthread_mutex_unlock(&tab_rond->eat);
 			i++;
 		}
 	}

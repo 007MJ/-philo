@@ -6,7 +6,7 @@
 /*   By: mnshimiy <mnshimiy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/05 21:50:44 by mnshimiy          #+#    #+#             */
-/*   Updated: 2024/01/07 00:02:50 by mnshimiy         ###   ########.fr       */
+/*   Updated: 2024/01/07 14:56:22 by mnshimiy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,8 +39,8 @@ typedef struct s_circle
 	int						nb_socrates;
 	long long				time_prog;
 	long long				time_to_die;
-	int						time_to_eat;
-	int						time_to_sleep;
+	long					time_to_eat;
+	long					time_to_sleep;
 	int						running;
 	int						must_eat;
 	pthread_t				spinoza;
@@ -55,13 +55,14 @@ int				is_digit(char *str);
 long int		ft_atoi(char *str);
 void			*ft_calloc(size_t count, size_t size);
 int				must_eat(t_philo *philo);
-void			philo_print(t_philo *philo);
+void			philo_print(t_philo *philo, char *str);
 void			make_thread(t_circle *tab_rond);
 int				main_parsing(char *av[], int ac);
-void			eat_after_spleep(t_philo *philo);
+int				eat(t_philo *philo);
 void			free_philo(t_circle *tab_rond);
 void			checker(t_circle *tab_rond);
 long long		live_time(void);
 long long		current_time(t_circle *tab_rond);
 void			ft_usleep(long time);
+int				is_dead(t_circle *tab_rond);
 #endif
